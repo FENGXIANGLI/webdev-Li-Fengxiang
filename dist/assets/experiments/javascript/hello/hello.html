@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1 id="hello"></h1>
+  <script>
+    var today = new Date();
+    document.write(today);
+    document.write("<h2>The Month</h2>")
+    document.write(today.getMonth());
+
+    var hello = document.getElementById("hello");
+    hello.innerHTML = "Hello from innerHTML";
+
+    hello.style.color = "red";
+    hello.style.fontSize = "25px";
+    hello.style.display = "none";
+
+    document.write("<h1>Hello from JavaSctipt</h1>");
+    console.log("Hello from the Console");
+  </script>
+  <h1>Hello from HTML!!!</h1>
+</body>
+</html>
