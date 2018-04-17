@@ -32,24 +32,15 @@ export class LoginComponent implements OnInit {
     this.username = this.loginForm.value.username;
     this.password = this.loginForm.value.password;
 
-    this.userService.findUserByCredential(this.username, this.password).subscribe(
-      (user: User) => {
-        this.errorFlag = false;
-        this.router.navigate(['/user', user._id]);
-      },
-      (error: any) => {
-        this.errorFlag = true;
-      }
-    );
-
     // calling client side userservice to send login information
     console.log('data', this.username);
     this.userService.login(this.username, this.password)
       .subscribe(
-        (data: any) => {
-          this.sharedService.user = data;
+        (user: any) => {
+          this.sharedService.user = user;
           this.errorFlag = false;
-          this.router.navigate(['/use'])},
+          this.router.navigate(['/user', user._id]);
+        },
         (error: any) => {
           console.log(error);
         }

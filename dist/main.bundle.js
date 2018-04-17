@@ -114,7 +114,7 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 /***/ "../../../../../src/app/app.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -359,7 +359,7 @@ var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule 
 /***/ "../../../../../src/app/components/page/page-edit/page-edit.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -451,7 +451,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/page/page-list/page-list.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -527,7 +527,7 @@ var _a, _b;
 /***/ "../../../../../src/app/components/page/page-new/page-new.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -611,7 +611,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/user/login/login.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -672,24 +672,19 @@ var LoginComponent = (function () {
         var _this = this;
         this.username = this.loginForm.value.username;
         this.password = this.loginForm.value.password;
-        this.userService.findUserByCredential(this.username, this.password).subscribe(function (user) {
-            _this.errorFlag = false;
-            _this.router.navigate(['/user', user._id]);
-        }, function (error) {
-            _this.errorFlag = true;
-        });
         // calling client side userservice to send login information
         console.log('data', this.username);
         this.userService.login(this.username, this.password)
-            .subscribe(function (data) {
-            _this.sharedService.user = data;
+            .subscribe(function (user) {
+            _this.sharedService.user = user;
             _this.errorFlag = false;
-            _this.router.navigate(['/use']);
+            _this.router.navigate(['/user', user._id]);
         }, function (error) {
             console.log(error);
         });
     };
     LoginComponent.prototype.navigateToFacebook = function () {
+        this.errorFlag = false;
         window.location.href = this.baseUrl + '/facebook/login';
     };
     LoginComponent.prototype.ngOnInit = function () {
@@ -717,7 +712,7 @@ var _a, _b, _c, _d;
 /***/ "../../../../../src/app/components/user/profile/profile.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -817,7 +812,7 @@ var _a, _b, _c, _d, _e;
 /***/ "../../../../../src/app/components/user/register/register.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -911,7 +906,7 @@ var _a, _b, _c, _d;
 /***/ "../../../../../src/app/components/website/website-edit/website-edit.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1005,7 +1000,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/website/website-list/website-list.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1081,7 +1076,7 @@ var _a, _b;
 /***/ "../../../../../src/app/components/website/website-new/website-new.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1166,7 +1161,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/widget/widget-chooser/widget-chooser.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1256,7 +1251,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/widget/widget-edit/widget-edit.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1333,7 +1328,7 @@ var _a, _b;
 /***/ "../../../../../src/app/components/widget/widget-edit/widget-header/widget-header.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1439,7 +1434,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/widget/widget-edit/widget-html/widget-html.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1543,7 +1538,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/widget/widget-edit/widget-image/widget-image.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1652,7 +1647,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/widget/widget-edit/widget-text/widget-text.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1756,7 +1751,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/widget/widget-edit/widget-youtube/widget-youtube.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1860,7 +1855,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/widget/widget-list/flickr-image-search/flickr-image-search.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -1978,7 +1973,7 @@ var _a, _b, _c, _d;
 /***/ "../../../../../src/app/components/widget/widget-list/widget-list.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")();
 // imports
 
 
@@ -2660,11 +2655,14 @@ var _a;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: true,
-    // baseUrl : "",
-    // baseUrl : 'http://localhost:3200',
-    baseUrl: 'https://webdev-fengxiang-li.herokuapp.com'
+    production: false,
+    baseUrl: 'http://localhost:3200',
 };
 //# sourceMappingURL=environment.js.map
 
